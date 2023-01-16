@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Employee Details</h1>
+        <hr>
+        <p>Name: {{employee.designation}}</p>
+        <p>Designation: {{employee.designation}}</p>
+        <p>Email Address: {{employee.email}}</p>
+        <p>Joining Date: {{employee.joining_date}}</p>
+        <p>Salary: {{employee.salary | floatformat:2}}</p>
+        <p>Department: {{employee.department}}</p>
+        <hr>
+        <a href="{% url 'day3app:all' %}">BACK</a>
+
+    </body>
+</html>

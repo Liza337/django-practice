@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <h1>Employee List</h1>
+        <hr>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Designation</th>
+                    <th>Email</th>
+                    <th>Joining Date</th>
+                    <th>Salary</th>
+                    <th>Department</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employee_list %}
+                    <tr>
+                        <td><a href="{% url 'day3app:employee_detail' employee.id
+                            %}">{{employee.name}}</a></td>
+                        <td>{{employee.designation}}</td>
+                        <td>{{employee.email}}</td>
+                        <td>{{employee.joining_date}}</td>
+                        <td>{{employee.salary | floatformat:2}}</td>
+                        <td>{{employee.department}}</td>
+                        <td><a href="{% url 'day3app:employee_update' employee.id %}
+                        ">Update</a></td>
+                        <td><a href="{% url 'day3app:employee_delete' employee.id %}">Delete</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <a href="{% url 'day3app:employee_create' %}">Add New Employee</a>
+    </body>
+</html>
