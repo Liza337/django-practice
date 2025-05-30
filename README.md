@@ -1,2 +1,3 @@
-"# django-practice" 
-Web development lab projects
+"# django-practice"
+
+#Web development lab projects
